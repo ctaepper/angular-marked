@@ -303,7 +303,7 @@
 
         function set(text) {
           text = unindent(text || '');
-          element.html(marked(text, scope.opts || null));
+			element.html(window.markdownit().use(window.markdownitSup).render(text));
         }
 
         if (attrs.marked) {
